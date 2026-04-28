@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo "=== format check ==="
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+npx prettier --check .
+
+if [ $? -ne 0 ]; then
+  echo "Prettier formatting required"
+  exit 1
+fi
+
+echo "=== local path check ==="
+for f in *workflow.json; do
+  echo "=== $f ==="
+  if jq -e '.. | strings | select(length > 0 and test("^/home/|^C:\\\\Users\\\\"))' "$f" > /dev/null; then
+    echo "NG: $f"
+    exit 1
+  fi
+done

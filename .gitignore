@@ -1,0 +1,14 @@
+
+# Node / Prettier
+node_modules/
+package-lock.json
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# other
+/tmp
+/gabage
+/old*
