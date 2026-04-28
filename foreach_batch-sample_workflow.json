@@ -2,63 +2,15 @@
   "id": "1a22652a-a56a-43bf-8872-0eefe0a3c336",
   "revision": 0,
   "last_node_id": 18,
-  "last_link_id": 26,
+  "last_link_id": 27,
   "nodes": [
-    {
-      "id": 6,
-      "type": "EmptyLatentImage",
-      "pos": [418.0647277832031, 291.29619916280114],
-      "size": [300, 110],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "幅",
-          "name": "width",
-          "type": "INT",
-          "widget": { "name": "width" },
-          "link": null
-        },
-        {
-          "localized_name": "高さ",
-          "name": "height",
-          "type": "INT",
-          "widget": { "name": "height" },
-          "link": null
-        },
-        {
-          "localized_name": "バッチサイズ",
-          "name": "batch_size",
-          "type": "INT",
-          "widget": { "name": "batch_size" },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "潜在",
-          "name": "LATENT",
-          "type": "LATENT",
-          "slot_index": 0,
-          "links": [9]
-        }
-      ],
-      "title": "🖼️ Empty Latent (512x512)",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.19.5",
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [512, 512, 1]
-    },
     {
       "id": 5,
       "type": "CLIPTextEncode",
-      "pos": [418.0647277832031, 161.29619916280095],
+      "pos": [495.3367624918621, 347.45130420260887],
       "size": [300, 100],
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         { "localized_name": "クリップ", "name": "clip", "type": "CLIP", "link": 3 },
@@ -90,10 +42,10 @@
     {
       "id": 4,
       "type": "CLIPTextEncode",
-      "pos": [418.0647277832031, 21.296199162801198],
+      "pos": [495.3367624918621, 207.45130420260926],
       "size": [300, 100],
       "flags": {},
-      "order": 8,
+      "order": 7,
       "mode": 0,
       "inputs": [
         { "localized_name": "クリップ", "name": "clip", "type": "CLIP", "link": 2 },
@@ -123,263 +75,12 @@
       "widgets_values": [""]
     },
     {
-      "id": 2,
-      "type": "PrimitiveNode",
-      "pos": [37.097184922960146, 17.106380462646612],
-      "size": [326.531591796875, 88],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "STRING",
-          "type": "STRING",
-          "widget": { "name": "strings" },
-          "slot_index": 0,
-          "links": [5]
-        }
-      ],
-      "title": "📝 プロンプトリスト (改行区切り・3行=3枚)",
-      "properties": { "Run widget replace on values": false, "run_on_missing_inputs": true },
-      "widgets_values": [
-        "a cute cat sitting on a bench\na majestic dragon flying in the sky\na futuristic city at night"
-      ]
-    },
-    {
-      "id": 3,
-      "type": "ImpactStringSelector",
-      "pos": [38.06472778320319, 161.29619916280095],
-      "size": [327.531591796875, 136],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "strings",
-          "name": "strings",
-          "type": "STRING",
-          "widget": { "name": "strings" },
-          "link": 5
-        },
-        {
-          "localized_name": "multiline",
-          "name": "multiline",
-          "type": "BOOLEAN",
-          "widget": { "name": "multiline" },
-          "link": null
-        },
-        {
-          "localized_name": "select",
-          "name": "select",
-          "type": "INT",
-          "widget": { "name": "select" },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "文字列",
-          "name": "STRING",
-          "type": "STRING",
-          "slot_index": 0,
-          "links": [6]
-        }
-      ],
-      "title": "🔀 StringSelector (select=1〜N、1-indexed)",
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "8.28.3",
-        "Node name for S&R": "ImpactStringSelector"
-      },
-      "widgets_values": [
-        "a cute cat sitting on a bench\na majestic dragon flying in the sky\na futuristic city at night",
-        false,
-        2
-      ]
-    },
-    {
-      "id": 11,
-      "type": "ImpactSetWidgetValue",
-      "pos": [588.009380764432, 620.032475789388],
-      "size": [426.6894592285156, 374],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        { "localized_name": "signal", "name": "signal", "type": "*", "link": 12 },
-        {
-          "localized_name": "boolean_value",
-          "name": "boolean_value",
-          "shape": 7,
-          "type": "BOOLEAN",
-          "link": null
-        },
-        {
-          "localized_name": "int_value",
-          "name": "int_value",
-          "shape": 7,
-          "type": "INT",
-          "link": 25
-        },
-        {
-          "localized_name": "float_value",
-          "name": "float_value",
-          "shape": 7,
-          "type": "FLOAT",
-          "link": null
-        },
-        {
-          "localized_name": "string_value",
-          "name": "string_value",
-          "shape": 7,
-          "type": "STRING",
-          "link": null
-        },
-        {
-          "localized_name": "node_id",
-          "name": "node_id",
-          "type": "INT",
-          "widget": { "name": "node_id" },
-          "link": null
-        },
-        {
-          "localized_name": "widget_name",
-          "name": "widget_name",
-          "type": "STRING",
-          "widget": { "name": "widget_name" },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "signal_opt",
-          "name": "signal_opt",
-          "type": "*",
-          "slot_index": 0,
-          "links": null
-        }
-      ],
-      "title": "✏️ SetWidgetValue\n(node_id=3のselectにcountを書き込む)",
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "8.28.3",
-        "Node name for S&R": "ImpactSetWidgetValue"
-      },
-      "widgets_values": [3, "select"]
-    },
-    {
-      "id": 10,
-      "type": "ImpactQueueTriggerCountdown",
-      "pos": [18.009262084960785, 616.6065555148662],
-      "size": [447.0052551269531, 146],
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "inputs": [
-        { "localized_name": "signal", "name": "signal", "shape": 7, "type": "*", "link": null },
-        {
-          "localized_name": "count",
-          "name": "count",
-          "type": "INT",
-          "widget": { "name": "count" },
-          "link": null
-        },
-        {
-          "localized_name": "total",
-          "name": "total",
-          "type": "INT",
-          "widget": { "name": "total" },
-          "link": null
-        },
-        {
-          "localized_name": "mode",
-          "name": "mode",
-          "type": "BOOLEAN",
-          "widget": { "name": "mode" },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "signal_opt",
-          "name": "signal_opt",
-          "type": "*",
-          "slot_index": 0,
-          "links": [12]
-        },
-        {
-          "localized_name": "count",
-          "name": "count",
-          "type": "INT",
-          "slot_index": 1,
-          "links": [25]
-        },
-        {
-          "localized_name": "total",
-          "name": "total",
-          "type": "INT",
-          "slot_index": 2,
-          "links": null
-        }
-      ],
-      "title": "🔄 QueueTrigger Countdown\n(count=プロンプト行数にセット)",
-      "properties": {
-        "cnr_id": "comfyui-impact-pack",
-        "ver": "8.28.3",
-        "Node name for S&R": "ImpactQueueTriggerCountdown"
-      },
-      "widgets_values": [0, 3, true]
-    },
-    {
-      "id": 1,
-      "type": "CheckpointLoaderSimple",
-      "pos": [34.550857543945355, 369.8888026343452],
-      "size": [315, 98],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "localized_name": "ckpt名",
-          "name": "ckpt_name",
-          "type": "COMBO",
-          "widget": { "name": "ckpt_name" },
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "localized_name": "モデル",
-          "name": "MODEL",
-          "type": "MODEL",
-          "slot_index": 0,
-          "links": [1]
-        },
-        {
-          "localized_name": "CLIP",
-          "name": "CLIP",
-          "type": "CLIP",
-          "slot_index": 1,
-          "links": [2, 3]
-        },
-        { "localized_name": "VAE", "name": "VAE", "type": "VAE", "slot_index": 2, "links": [4] }
-      ],
-      "title": "📦 Checkpoint Loader",
-      "properties": {
-        "cnr_id": "comfy-core",
-        "ver": "0.19.5",
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": ["waiIllustriousSDXL_v150.safetensors"]
-    },
-    {
       "id": 7,
       "type": "KSampler",
-      "pos": [792.9280853271486, 33.89348665873239],
+      "pos": [870.2001200358072, 74.87101414998398],
       "size": [340, 262],
       "flags": {},
-      "order": 9,
+      "order": 8,
       "mode": 0,
       "inputs": [
         { "localized_name": "モデル", "name": "model", "type": "MODEL", "link": 1 },
@@ -445,10 +146,10 @@
     {
       "id": 8,
       "type": "VAEDecode",
-      "pos": [1172.4307420518658, 393.53237787882466],
+      "pos": [1249.702776760524, 434.509905370076],
       "size": [210, 46],
       "flags": {},
-      "order": 10,
+      "order": 9,
       "mode": 0,
       "inputs": [
         { "localized_name": "サンプル", "name": "samples", "type": "LATENT", "link": 10 },
@@ -470,10 +171,10 @@
     {
       "id": 9,
       "type": "SaveImage",
-      "pos": [1206.2964206271693, 57.791652679443814],
+      "pos": [1283.5684553358276, 98.7691801706954],
       "size": [320, 270],
       "flags": {},
-      "order": 11,
+      "order": 10,
       "mode": 0,
       "inputs": [
         { "localized_name": "画像", "name": "images", "type": "IMAGE", "link": 11 },
@@ -491,19 +192,248 @@
       "widgets_values": ["foreach_batch/output"]
     },
     {
-      "id": 17,
-      "type": "Note",
-      "pos": [1054.121175689193, 580.8460622068723],
-      "size": [735.2833316947176, 413.0793269155895],
+      "id": 10,
+      "type": "ImpactQueueTriggerCountdown",
+      "pos": [-776.9551210191511, 71.01980001661691],
+      "size": [476.2749498579236, 146],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        { "localized_name": "signal", "name": "signal", "shape": 7, "type": "*", "link": null },
+        {
+          "localized_name": "count",
+          "name": "count",
+          "type": "INT",
+          "widget": { "name": "count" },
+          "link": null
+        },
+        {
+          "localized_name": "total",
+          "name": "total",
+          "type": "INT",
+          "widget": { "name": "total" },
+          "link": null
+        },
+        {
+          "localized_name": "mode",
+          "name": "mode",
+          "type": "BOOLEAN",
+          "widget": { "name": "mode" },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "signal_opt",
+          "name": "signal_opt",
+          "type": "*",
+          "slot_index": 0,
+          "links": []
+        },
+        {
+          "localized_name": "count",
+          "name": "count",
+          "type": "INT",
+          "slot_index": 1,
+          "links": [27]
+        },
+        {
+          "localized_name": "total",
+          "name": "total",
+          "type": "INT",
+          "slot_index": 2,
+          "links": null
+        }
+      ],
+      "title": "🔄 QueueTrigger Countdown\n(count=プロンプト行数にセット)",
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "8.28.3",
+        "Node name for S&R": "ImpactQueueTriggerCountdown"
+      },
+      "widgets_values": [0, 3, true]
+    },
+    {
+      "id": 3,
+      "type": "ImpactStringSelector",
+      "pos": [-267.51072273254334, 79.34108776516388],
+      "size": [327.531591796875, 136],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "strings",
+          "name": "strings",
+          "type": "STRING",
+          "widget": { "name": "strings" },
+          "link": 5
+        },
+        {
+          "localized_name": "multiline",
+          "name": "multiline",
+          "type": "BOOLEAN",
+          "widget": { "name": "multiline" },
+          "link": null
+        },
+        {
+          "localized_name": "select",
+          "name": "select",
+          "type": "INT",
+          "widget": { "name": "select" },
+          "link": 27
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "文字列",
+          "name": "STRING",
+          "type": "STRING",
+          "slot_index": 0,
+          "links": [6]
+        }
+      ],
+      "title": "🔀 StringSelector (select=1〜N、1-indexed)",
+      "properties": {
+        "cnr_id": "comfyui-impact-pack",
+        "ver": "8.28.3",
+        "Node name for S&R": "ImpactStringSelector"
+      },
+      "widgets_values": [
+        "a cute cat sitting on a bench\na majestic dragon flying in the sky\na futuristic city at night",
+        false,
+        1
+      ]
+    },
+    {
+      "id": 2,
+      "type": "PrimitiveNode",
+      "pos": [-767.233464389376, 272.3379244486488],
+      "size": [456.4889867570663, 95.02469965616854],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "widget": { "name": "strings" },
+          "slot_index": 0,
+          "links": [5]
+        }
+      ],
+      "title": "📝 プロンプトリスト (改行区切り・3行=3枚)",
+      "properties": { "Run widget replace on values": false, "run_on_missing_inputs": true },
+      "widgets_values": [
+        "a cute cat sitting on a bench\na majestic dragon flying in the sky\na futuristic city at night"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "CheckpointLoaderSimple",
+      "pos": [104.79819259643541, 412.03705698649065],
+      "size": [315, 98],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "ckpt名",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": { "name": "ckpt_name" },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "モデル",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [1]
+        },
+        {
+          "localized_name": "CLIP",
+          "name": "CLIP",
+          "type": "CLIP",
+          "slot_index": 1,
+          "links": [2, 3]
+        },
+        { "localized_name": "VAE", "name": "VAE", "type": "VAE", "slot_index": 2, "links": [4] }
+      ],
+      "title": "📦 Checkpoint Loader",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.5",
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": ["waiIllustriousSDXL_v150.safetensors"]
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": [495.336762491862, 45.430921385023375],
+      "size": [300, 110],
       "flags": {},
       "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "幅",
+          "name": "width",
+          "type": "INT",
+          "widget": { "name": "width" },
+          "link": null
+        },
+        {
+          "localized_name": "高さ",
+          "name": "height",
+          "type": "INT",
+          "widget": { "name": "height" },
+          "link": null
+        },
+        {
+          "localized_name": "バッチサイズ",
+          "name": "batch_size",
+          "type": "INT",
+          "widget": { "name": "batch_size" },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "潜在",
+          "name": "LATENT",
+          "type": "LATENT",
+          "slot_index": 0,
+          "links": [9]
+        }
+      ],
+      "title": "🖼️ Empty Latent (512x512)",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.19.5",
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [512, 512, 1]
+    },
+    {
+      "id": 17,
+      "type": "Note",
+      "pos": [124.516320935913, 619.4820090422852],
+      "size": [735.2833316947176, 413.0793269155895],
+      "flags": {},
+      "order": 2,
       "mode": 0,
       "inputs": [],
       "outputs": [],
       "title": "README/Note",
       "properties": {},
       "widgets_values": [
-        "# これは何：\nForEachバッチ実行のシンプルなサンプルworkflow\nプロンプトリストNodeにセットした文字列を、１行ごとにプロンプトにして画像を生成する\n\n# 使い方：\n＊ プロンプトリストNodeに改行区切りでプロンプトを詰める\n＊ ループ制御のQueueTrigger Nodeのtotalにプロンプトの行数をセット\n＊ 実行する\n(ループ制御が次以降のジョブをセットして自動実行する)\n\n# SetWidgetValueの使い方について：\nworkflowのjsonファイルをテキストエディタで開く\nまたは、ブラウザの開発者ツール(F12キー)のConsoleで下記コマンドで対象Nodeのnode_idを確認\n```\napp.graph._nodes.find(n => n.type === \"ImpactStringSelector\").id\n```\n\n# リリースについて：\nComfyUIの基本的な問題と使い方は自分でなんとかできる使用者を想定\n本workflowは生成AIを用いて作成された\nライセンスはCC0(public domain)\n（生成AIを開放してくれている人たちのように、あなたが共有知に理解があり、かつそれを実践できる環境にあることを祈ります）\n\nmore document: daisy-comfyui-workflows"
+        "# これは何：\nForEachバッチ実行のシンプルなサンプルworkflow\nプロンプトリストNodeにセットした文字列を、１行ごとにプロンプトにして画像を生成する\n\n# 使い方：\n＊ プロンプトリストNodeに改行区切りでプロンプトを詰める\n＊ ループ制御のQueueTrigger Nodeのtotalにプロンプトの行数をセット\n＊ 実行する\n(ループ制御が次以降のジョブをセットして自動実行する)\n\n# リリースについて：\nComfyUIの基本的な問題と使い方は自分でなんとかできる使用者を想定\n本workflowは生成AIを用いて作成された\nライセンスはCC0(public domain)\n（生成AIを開放してくれている人たちのように、あなたが共有知に理解があり、かつそれを実践できる環境にあることを祈ります）\n\nmore document: daisy-comfyui-workflows"
       ],
       "color": "#432",
       "bgcolor": "#653"
@@ -521,14 +451,13 @@
     [9, 6, 0, 7, 3, "LATENT"],
     [10, 7, 0, 8, 0, "LATENT"],
     [11, 8, 0, 9, 0, "IMAGE"],
-    [12, 10, 0, 11, 0, "*"],
-    [25, 10, 1, 11, 2, "INT"]
+    [27, 10, 1, 3, 2, "INT"]
   ],
   "groups": [
     {
       "id": 2,
       "title": "🎨 画像生成パイプライン",
-      "bounding": [-0.20365397135328278, -61.59723387824152, 1586.0046047634537, 572.5648117065427],
+      "bounding": [77.06838073730543, -20.619706386989957, 1586.0046047634537, 572.5648117065427],
       "color": "#7e4f9e",
       "font_size": 14,
       "flags": {}
@@ -536,7 +465,7 @@
     {
       "id": 3,
       "title": "🔁 ForEachループ制御",
-      "bounding": [8.00926208496078, 543.0065555148661, 1016.6895779079865, 461.0259202745218],
+      "bounding": [-812.7124659220372, -23.654355367023, 870.34132991367, 630.7901158650707],
       "color": "#3f789e",
       "font_size": 24,
       "flags": {}
@@ -544,7 +473,7 @@
   ],
   "config": {},
   "extra": {
-    "ds": { "scale": 0.6545454545454555, "offset": [1117.7838069906052, 492.6113832302747] }
+    "ds": { "scale": 0.9583200000000023, "offset": [902.2324057704258, 15.793153720152842] }
   },
   "version": 0.4
 }
